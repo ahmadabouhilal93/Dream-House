@@ -1,0 +1,126 @@
+:root{
+--fill_color:rgb(2, 136, 170);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.my-from{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.my-from .contain{
+    width: 330px;
+    border: #ccc solid 1px;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.my-from .contain .progress-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    justify-content:space-between;
+}
+.my-from .contain .progress-container::after{
+    content:"";
+    width: 100%;
+    position: absolute;
+    height: 4px;
+    background-color: #ccc;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.my-from .contain .progress-container .circle{
+    z-index: 10000;
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.my-from .contain .progress-container .active{
+    border: solid 3px var(--fill_color);
+}
+.progress2{
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    top: 50%;
+    transition: ease 0.2s;
+    transform: translateY(-50%);
+    background-color:var(--fill_color);
+    z-index: 11;    
+
+}
+/*end progress*/
+.my-from .page{
+    display: none;
+    animation: animate 0.5s;
+transform-origin: top;
+
+}
+.my-from header{
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+}
+.my-from .page .title{
+    color: black;
+    font-size: 18px;
+}
+.my-from .active{
+display: block;
+
+}
+.my-from .page input,select{
+    width: 100%;
+    display: block;
+    padding: 10px;
+}
+.my-from .page input:focus{
+    outline: 0;
+}
+.my-from .page .input-group{
+    margin-bottom: 10px;
+}
+.btn{
+    background-color: var(--fill_color);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    
+
+}
+.warning{
+    color:rgb(184, 63, 63);
+    font-size: 14px;
+    display: block;
+}
+.input-group.double>*{
+    width: 48%;
+    margin:0 1%;
+}
+label{
+    display: block;
+    width: 100%;
+}
+@keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
